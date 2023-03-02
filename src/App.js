@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 
@@ -7,16 +7,21 @@ function App() {
 
   const [Total, setTotal] = useState(0);
   const [Persoas, setPersoas] = useState(1);
+  const [Pago,setPago] = useState(1);
 
   function manexadorTotal (event){
     setTotal(event.target.value)
+    /*setPago(Total/Persoas)*/ 
   }
 
   function manexadorPersoas (event){
     setPersoas(event.target.value)
+    /*setPago(Total/Persoas)*/
   }
 
-  return (
+  useEffect(() => {Total/Persoas}, [Total, Persoas]);
+
+   return (
     <>
       <label for="total">Total a pagar:</label>
       <input type="text" id='total' onInput={manexadorTotal}></input>
@@ -29,7 +34,7 @@ function App() {
       <div>
       {Persoas}
       </div>
-
+      {(Pago)}
 
     </>
   );
