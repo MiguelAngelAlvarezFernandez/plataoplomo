@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react'
+
+
 
 function App() {
+
+  const [Total, setTotal] = useState(0);
+  const [Persoas, setPersoas] = useState(1);
+
+  function manexadorTotal (event){
+    setTotal(event.target.value)
+  }
+
+  function manexadorPersoas (event){
+    setPersoas(event.target.value)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <label for="total">Total a pagar:</label>
+      <input type="text" id='total' onInput={manexadorTotal}></input>
+      
+      <p>{Total}</p>
+
+      <label for="pax"> Nº de Persoas:</label>
+      <input type="range" id="pax" name="pax" min="1" max="20" onInput={manexadorPersoas}/>
+      <div>
+      {Persoas}
+      </div>
+
+
+    </>
   );
 }
 
