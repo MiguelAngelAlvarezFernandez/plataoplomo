@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react'
+import Buttonsaldo from "./Components/Buttonsaldo/Buttonsaldo" 
 
 
 
@@ -29,6 +30,7 @@ function App() {
       {Persoas}
       </div>
 
+      <Buttonsaldo/>
 
     </>
   );
