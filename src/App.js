@@ -8,7 +8,7 @@ function App() {
   const [Total, setTotal] = useState(0);
   const [Persoas, setPersoas] = useState(1);
 
-  /*const [PagoPersoa, setPagoPersoa] = useState(0);*/
+  const [PagoPersoa, setPagoPersoa] = useState(0);
 
   function manexadorTotal (event){
     setTotal(event.target.value)
@@ -18,20 +18,16 @@ function App() {
     setPersoas(event.target.value)
   }
 
-  /*useEffect(
+ 
+  useEffect(
   function calcPagoPersoa () {
-    let dividendo = Total
-    let divisor = Persoas
-    let calculo = dividendo/divisor
-    setPagoPersoa(calculo)
+
+    setPagoPersoa(Math.round((Total/Persoas)*100)/100)
   },
   [Total, Persoas]
-  )*/
+  )
 
-  function calcPagoPersoa(dividendo, divisor){
-    let calculo = (dividendo/divisor)
-    return calculo
-  }
+
 
   return (
     <>
@@ -46,9 +42,9 @@ function App() {
       {Persoas}
       </div>
 
-      <p>Con useEffect {/*{PagoPersoa}*/}</p>
+      <p>Con useEffect {PagoPersoa}</p>
 
-      <p>Solo con función calcPagoPersoa: {calcPagoPersoa(Total, Persoas)}</p>
+    
 
       <Saldo/>
 
