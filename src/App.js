@@ -1,5 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react'
+import Saldo from './Components/Saldo/Saldo.jsx';
+import Personas from './Components/Personas/Personas.jsx'
 
 function App() {
 
@@ -21,7 +23,7 @@ function App() {
 
    return (
     <>
-      <label for="total">Total a pagar:</label>
+          <label for="total">Total a pagar:</label>
       <input type="text" id='total' onInput={manexadorTotal}></input>
       <div>
       {Total}
