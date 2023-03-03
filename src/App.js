@@ -1,13 +1,14 @@
 import './App.css';
-import { useState } from 'react'
-import Buttonsaldo from "./Components/Buttonsaldo/Buttonsaldo" 
-
+import { useEffect, useState } from 'react'
+import Saldo from "./Components/Saldo/Saldo" 
 
 
 function App() {
 
   const [Total, setTotal] = useState(0);
   const [Persoas, setPersoas] = useState(1);
+
+  const [PagoPersoa, setPagoPersoa] = useState(0);
 
   function manexadorTotal (event){
     setTotal(event.target.value)
@@ -16,6 +17,16 @@ function App() {
   function manexadorPersoas (event){
     setPersoas(event.target.value)
   }
+
+  useEffect(
+  function calcPagoPersoa () {
+    let dividendo = Total
+    let divisor = Persoas
+    let calculo = dividendo/divisor
+    setPagoPersoa(calculo)
+  },
+  [Total, Persoas]
+  )
 
   return (
     <>
@@ -30,8 +41,11 @@ function App() {
       {Persoas}
       </div>
 
-      <Buttonsaldo/>
+      <p>{PagoPersoa}</p>
 
+      <Saldo/>
+
+      
     </>
   );
 }

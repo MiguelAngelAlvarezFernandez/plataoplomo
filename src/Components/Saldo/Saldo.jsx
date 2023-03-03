@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Buttonsaldo() {
+function Saldo() {
 
 const [Saldo, setSaldo] = useState("")
 
@@ -18,4 +18,4 @@ function manexadorSaldo (event){
     );
   }
   
-  export default Buttonsaldo;
+  export default Saldo;
