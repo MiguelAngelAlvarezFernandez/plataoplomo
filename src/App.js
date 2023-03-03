@@ -1,13 +1,12 @@
 import './App.css';
 import { useEffect, useState } from 'react'
-import Saldo from "./Components/Saldo/Saldo" 
-
 
 function App() {
 
   const [Total, setTotal] = useState(0);
   const [Persoas, setPersoas] = useState(1);
-  
+  const [PagoPersoa, setPagoPersoa] = useState(0)
+
   function manexadorTotal (event){
     setTotal(event.target.value)
   }
@@ -15,6 +14,11 @@ function App() {
   function manexadorPersoas (event){
     setPersoas(event.target.value)
   }
+
+  useEffect(() => {
+    setPagoPersoa(Math.round((Total/Persoas)*100)/100)
+  }, [Total,Persoas]);
+
    return (
     <>
       <label for="total">Total a pagar:</label>
@@ -28,6 +32,11 @@ function App() {
       <div>
       {Persoas}
       </div>
+      <div>
+        {PagoPersoa} €
+      </div>
+      <Saldo Poner={PagoPersoa}></Saldo>
+      <Personas> Xente={Persoas}</Personas>
 
     </>
   );
