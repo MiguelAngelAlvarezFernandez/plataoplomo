@@ -1,6 +1,5 @@
 import './App.css';
 import { useEffect, useState } from 'react'
-import Saldo from './Components/Saldo/Saldo.jsx';
 import Personas from './Components/Personas/Personas.jsx'
 
 function App() {
@@ -37,8 +36,8 @@ function App() {
       <div>
         {PagoPersoa} €
       </div>
-      <Saldo Poner={PagoPersoa}></Saldo>
-      <Personas> Xente={Persoas}</Personas>
+      {/* <Saldo Poner={PagoPersoa}></Saldo> */}
+      <Personas Poner={PagoPersoa} Xente={Persoas}></Personas>
 
     </>
   );

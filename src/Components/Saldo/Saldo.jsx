@@ -6,9 +6,10 @@ function Saldo(props) {
 
 const [Saldo, setSaldo] = useState(0)
 
-useEffect(() => {
-  setSaldo(Math.round((/*props.Aportacion*/50-props.Poner)*100)/100)
-}, [/*props.Aportacion,*/props.Poner]);
+useEffect(() => 
+  {
+  setSaldo(Math.round((props.Aportado-props.Poner)*100)/100)
+  },[props.Aportado,props.Poner]);
 
     return (
       <>
