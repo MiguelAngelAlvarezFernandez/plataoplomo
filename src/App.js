@@ -5,8 +5,8 @@ import Personas from './Components/Personas/Personas.jsx'
 
 function App() {
 
-  const [Total, setTotal] = useState(0);
-  const [Persoas, setPersoas] = useState(1);
+  const [Total, setTotal] = useState(0)
+  const [Persoas, setPersoas] = useState(1)
   const [PagoPersoa, setPagoPersoa] = useState(0)
 
   function manexadorTotal (event){
