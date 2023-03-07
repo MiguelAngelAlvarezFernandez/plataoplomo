@@ -30,7 +30,6 @@ function Personas(props) {
         
         <Saldo Aportado={Aportado} Poner={props.Poner}></Saldo>
 
-
       </div>
     );
   }
