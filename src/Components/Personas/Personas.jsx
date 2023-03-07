@@ -17,28 +17,21 @@ function Personas(props) {
     }    
 
     return (
-      <>
-        <p>Xente {props.Xente}</p>
-        <p>Poñer {props.Poner}</p>
-        <p>Nombre {Nombre}</p>
-        <p>Aportado {Aportado}</p>
-
-
+      <div>
         <label for="nombre">
-          Nombre:
+        Nombre:
         </label>
-       
         <input type="text" id="nombre" onInput={manexadorNombre} value={Nombre}></input>
         
         <label for="aportado">
-          Aportado:
+        Aportado:
         </label>
-
         <input type="text" id="aportado" onInput={manexadorAportado} value={Aportado}></input>
         
         <Saldo Aportado={Aportado} Poner={props.Poner}></Saldo>
 
-      </>
+
+      </div>
     );
   }
   
