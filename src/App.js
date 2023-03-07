@@ -1,6 +1,8 @@
 import './App.css';
-import { useEffect, useState } from 'react'
+import { useEffect, useState, createContext } from 'react'
 import Personas from './Components/Personas/Personas.jsx'
+
+export const Context = createContext()
 
 function App() {
 
@@ -8,6 +10,8 @@ function App() {
   const [Persoas, setPersoas] = useState(0)
   const [PagoPersoa, setPagoPersoa] = useState(0)
   const [DatosInvitados, setDatosInvitados] = useState ([])
+
+  
 
   function manexadorTotal (event){
     setTotal(event.target.value)
@@ -35,7 +39,9 @@ function App() {
   )
 
    return (
-    <>
+
+    <Context.Provider value={PagoPersoa}>
+      <>
       <label for="total">Total a pagar:</label>
       <input type="text" id='total' onInput={manexadorTotal}></input>
       <br></br>
@@ -43,9 +49,9 @@ function App() {
       <input type="range" id="pax" name="pax" min="0" max="20" value={Persoas} onInput={manexadorPersoas}/><span>{Persoas}</span>
       <div> Pago por persona: {PagoPersoa} € </div>
       <div>{DatosInvitados}</div>
-
-    </>
-  );
+      </>
+    </Context.Provider>
+    );
 }
 
 export default App;
