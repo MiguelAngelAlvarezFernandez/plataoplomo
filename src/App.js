@@ -14,12 +14,11 @@ function App() {
   }
 
   function manexadorPersoas (event){
-    setPersoas(event.target.value)
+    setPersoas(parseInt(event.target.value))
   }
 
   useEffect(() => {
-    if (Total===0 || Persoas===0){setPagoPersoa(0)} else
-    {setPagoPersoa(Math.round((Total/Persoas)*100)/100)}
+    setPagoPersoa( Persoas===0 ? 0 : Math.round((Total/Persoas)*100)/100 )
   }, [Total,Persoas]);
 
   useEffect(
