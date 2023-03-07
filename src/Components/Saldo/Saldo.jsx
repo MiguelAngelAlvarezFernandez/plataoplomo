@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
-import si from "./si.jpg"
-import non from "./non.jpg"
+import si from "../../imaxes/si.jpg"
+import non from "../../imaxes/non.jpg"
 import { Context } from "../../App"
 
 function Saldo(props) {
