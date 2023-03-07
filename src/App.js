@@ -11,8 +11,6 @@ function App() {
   const [PagoPersoa, setPagoPersoa] = useState(0)
   const [DatosInvitados, setDatosInvitados] = useState ([])
 
-  
-
   function manexadorTotal (event){
     setTotal(event.target.value)
   }
