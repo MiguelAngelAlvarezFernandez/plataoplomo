@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Saldo from "../Saldo/Saldo"
+import styles from "./Personas.module.css"
 
 function Personas(props) {
 
@@ -17,20 +18,27 @@ function Personas(props) {
     }    
 
     return (
-      <div>
+      <>
+      <div className={styles.todoenteiro}>
+      <div className={styles.enteiro}>
         <label for="nombre">
         Nombre:
         </label>
-        <input type="text" id="nombre" onInput={manexadorNombre} value={Nombre}></input>
-        
+        <input type="text" id="nombre" onInput={manexadorNombre} value={Nombre} size="9"></input>
+      </div>
+      <div>  
         <label for="aportado">
         Aportado:
         </label>
-        <input type="text" id="aportado" onInput={manexadorAportado} value={Aportado}></input>
-        
+        <input type="text" id="aportado" onInput={manexadorAportado} value={Aportado} size="2"></input>
+      </div>
+
+      <div>  
         <Saldo Aportado={Aportado} Poner={props.Poner}></Saldo>
 
       </div>
+      </div>
+      </>
     );
   }
   

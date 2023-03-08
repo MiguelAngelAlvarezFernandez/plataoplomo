@@ -1,8 +1,10 @@
-body {background-image: url(./imaxes/un.jpg);
-    background-repeat: no-repeat;
-    background-position-x:center;
-    background-position-y:center;
-    background-size: cover;
-    color: antiquewhite;
-    opacity: 0,75;
-  }
+.enteiro{
+  margin: 10px;
+}
+.todoenteiro{
+  margin-top: 25px;
+  margin-left: 15px;
+  background-color: lightgreen;
+
+  color: navy;
+}

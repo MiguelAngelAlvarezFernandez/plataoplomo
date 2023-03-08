@@ -1,8 +1,6 @@
 import './App.css';
-import { useEffect, useState, createContext } from 'react'
+import { useEffect, useState } from 'react'
 import Personas from './Components/Personas/Personas.jsx'
-
-export const Context = createContext()
 
 function App() {
 
@@ -38,16 +36,16 @@ function App() {
 
    return (
 
-    <Context.Provider value={PagoPersoa}>
       <>
       <label for="total">Total a pagar: </label>
       <input type="text" id='total' onInput={manexadorTotal}></input>
+      <br></br>
       <label for="pax"> Nº de Persoas: </label>
-      <input type="range" id="pax" name="pax" min="0" max="20" value={Persoas} onInput={manexadorPersoas}/><span>{Persoas}</span>
+      <input type="range" id="pax" name="pax" min="0" max="24" value={Persoas} onInput={manexadorPersoas}/><span>{Persoas}</span>
       <div> Pago por persona: {PagoPersoa} € </div>
-      <div>{DatosInvitados}</div>
+      <div className='clientes'>{DatosInvitados}</div>
       </>
-    </Context.Provider>
+  
     );
 }
 

@@ -4,7 +4,14 @@ body {background-image: url(./imaxes/xente.jpg);
   background-position-y:center;
   background-size: cover;
   color: antiquewhite;
+  display: flex;
+  justify-content: left;
 }
 .App {
   text-align: center;
 }
+.clientes
+{display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;}
