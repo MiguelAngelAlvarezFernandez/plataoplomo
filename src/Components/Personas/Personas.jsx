@@ -34,7 +34,7 @@ function Personas(props) {
       </div>
 
       <div>  
-        <Saldo Aportado={Aportado} Poner={props.Poner}></Saldo>
+        <Saldo Aportado={Aportado} /*Poner={props.Poner}*/></Saldo>
 
       </div>
       </div>

@@ -1,6 +1,8 @@
 import './App.css';
-import { useEffect, useState } from 'react'
+import { useEffect, useState, createContext } from 'react'
 import Personas from './Components/Personas/Personas.jsx'
+
+export const PagoContext = createContext()
 
 function App() {
 
@@ -26,17 +28,17 @@ function App() {
       const DatosComensales=[]
       let Contador = 0
       while(Contador < Persoas)
-      {DatosComensales.push(<Personas Poner={PagoPersoa} Xente={Persoas} key={Contador}></Personas>)
+      {DatosComensales.push(<Personas /*Poner={PagoPersoa}*/ /*Xente={Persoas}*/ key={Contador}></Personas>)
       Contador = Contador+1
       }
       setDatosInvitados(DatosComensales)
     },
-    [PagoPersoa]
+    [PagoPersoa, Persoas]
   )
 
    return (
 
-      <>
+      <PagoContext.Provider value={PagoPersoa}>
       <label for="total">Total a pagar: </label>
       <input type="text" id='total' onInput={manexadorTotal}></input>
       <br></br>
@@ -44,7 +46,7 @@ function App() {
       <input type="range" id="pax" name="pax" min="0" max="24" value={Persoas} onInput={manexadorPersoas}/><span>{Persoas}</span>
       <div> Pago por persona: {PagoPersoa} € </div>
       <div className='clientes'>{DatosInvitados}</div>
-      </>
+      </PagoContext.Provider>
   
     );
 }
