@@ -9,6 +9,7 @@ const varContexto = useContext(Context)
 
 const [Saldo, setSaldo] = useState(0)
 
+
 useEffect(() => 
   {
   setSaldo(Math.round((props.Aportado-props.Poner)*100)/100)
@@ -17,9 +18,8 @@ useEffect(() =>
 
     return (
       <>
-      {Saldo>=0 && <span>Saldo por persona: <img src={si} alt="PagoSi" width="50" height="75"/> {Saldo} €</span>}
-      {Saldo<0 && <span>Saldo por persona: <img src={non} alt="PagoNon" width="50" height="75"/> {Saldo} €</span>}
-      {varContexto}
+      {Saldo>=0 && <span>Saldo por persona: <img src={si} alt="PagoSi" width="33" height="50"/> {Saldo} €</span>}
+      {Saldo<0 && <span>Saldo por persona: <img src={non} alt="PagoNon" width="33" height="50"/> {Saldo} €</span>}
       </>
     );
   }
