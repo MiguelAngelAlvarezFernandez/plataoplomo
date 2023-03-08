@@ -29,7 +29,7 @@ function App() {
       const DatosComensales=[]
       let Contador = 0
       while(Contador < Persoas)
-      {DatosComensales.push(<Personas Poner={PagoPersoa} Xente={Persoas}></Personas>)
+      {DatosComensales.push(<Personas Poner={PagoPersoa} Xente={Persoas} key={Contador}></Personas>)
       Contador = Contador+1
       }
       setDatosInvitados(DatosComensales)
