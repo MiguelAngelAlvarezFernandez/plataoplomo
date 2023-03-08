@@ -2,7 +2,7 @@ import './App.css';
 import { useEffect, useState, createContext } from 'react'
 import Personas from './Components/Personas/Personas.jsx'
 
-export const Context = createContext()
+export const Contexto = createContext()
 
 function App() {
 
@@ -10,6 +10,7 @@ function App() {
   const [Persoas, setPersoas] = useState(0)
   const [PagoPersoa, setPagoPersoa] = useState(0)
   const [DatosInvitados, setDatosInvitados] = useState ([])
+  const [GT, setGT] = useState(0)
   
 
   function manexadorTotal (event){
@@ -31,6 +32,7 @@ function App() {
       while(Contador < Persoas)
       {DatosComensales.push(<Personas Poner={PagoPersoa} Xente={Persoas} key={Contador}></Personas>)
       Contador = Contador+1
+      setGT(GT+DatosComensales)
       }
       setDatosInvitados(DatosComensales)
     },
@@ -39,7 +41,7 @@ function App() {
 
    return (
 
-    <Context.Provider value={PagoPersoa}>
+    <Contexto.Provider value={GT}>
       <>
       <label for="total">Total a pagar: </label>
       <input type="text" id='total' onInput={manexadorTotal}></input>
@@ -50,7 +52,7 @@ function App() {
       <div> Gran Total: </div>
       <div>{DatosInvitados}</div>
       </>
-    </Context.Provider>
+    </Contexto.Provider>
     );
 }
 

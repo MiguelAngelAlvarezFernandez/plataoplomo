@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Saldo from "../Saldo/Saldo"
+// Poñer aquí o contexto
 
 function Personas(props) {
 
