@@ -5,6 +5,7 @@ function Personas(props) {
 
   const [Nombre,setNombre] = useState("")
   const [Aportado,setAportado] = useState(0)
+  const [Suma, setSuma] = useState (0)
 
   function manexadorNombre(evento)
     {
@@ -14,6 +15,7 @@ function Personas(props) {
     function manexadorAportado(evento)
     {
       setAportado(evento.target.value)
+      setSuma(Suma+Aportado)
     }    
 
     return (
@@ -27,7 +29,8 @@ function Personas(props) {
         Aportado:
         </label>
         <input type="text" id="aportado" onInput={manexadorAportado} value={Aportado}></input>
-        
+        <div>TOTAL:{Suma}</div>
+        <div>APORTADO:{Aportado}</div>
         <Saldo Aportado={Aportado} Poner={props.Poner}></Saldo>
 
       </div>
