@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Saldo from "../Saldo/Saldo"
-// Poñer aquí o contexto
+import { miContexto } from "../../App"
 
 function Personas(props) {
 
+  const GranTotal = useContext(miContexto)
   const [Nombre,setNombre] = useState("")
   const [Aportado,setAportado] = useState(0)
   const [Suma, setSuma] = useState (0)
@@ -17,6 +18,7 @@ function Personas(props) {
     {
       setAportado(evento.target.value)
       setSuma(Suma+Aportado)
+      GranTotal=Suma
     }    
 
     return (

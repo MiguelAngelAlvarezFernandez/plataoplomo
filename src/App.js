@@ -1,16 +1,17 @@
 import './App.css';
-import { useEffect, useState, createContext } from 'react'
+import { useEffect, useState, useContext, createContext } from 'react'
 import Personas from './Components/Personas/Personas.jsx'
 
-export const Contexto = createContext()
+export const miContexto = createContext()
 
 function App() {
 
+  const GranTotal = useContext(miContexto)
+  
   const [Total, setTotal] = useState(0)
   const [Persoas, setPersoas] = useState(0)
   const [PagoPersoa, setPagoPersoa] = useState(0)
   const [DatosInvitados, setDatosInvitados] = useState ([])
-  const [GT, setGT] = useState(0)
   
 
   function manexadorTotal (event){
@@ -25,35 +26,36 @@ function App() {
     setPagoPersoa( Persoas===0 ? 0 : Math.round((Total/Persoas)*100)/100 )
   }, [Total,Persoas]);
 
+  
   useEffect(
+    
     ()=>{
       const DatosComensales=[]
       let Contador = 0
       while(Contador < Persoas)
       {DatosComensales.push(<Personas Poner={PagoPersoa} Xente={Persoas} key={Contador}></Personas>)
       Contador = Contador+1
-      setGT(GT+DatosComensales)
+
       }
       setDatosInvitados(DatosComensales)
     },
-    [PagoPersoa]
+    [PagoPersoa] 
   )
-
+  
    return (
-
-    <Contexto.Provider value={GT}>
-      <>
+    <miContexto.Provider value={GranTotal}>
       <label for="total">Total a pagar: </label>
       <input type="text" id='total' onInput={manexadorTotal}></input>
       <br></br>
       <label for="pax"> Nº de Persoas: </label>
       <input type="range" id="pax" name="pax" min="0" max="20" value={Persoas} onInput={manexadorPersoas}/><span>{Persoas}</span>
       <div> Pago por persona: {PagoPersoa} € </div>
-      <div> Gran Total: </div>
+      <div> Gran Total: </div> {GranTotal}
       <div>{DatosInvitados}</div>
-      </>
-    </Contexto.Provider>
-    );
+    
+    </miContexto.Provider>
+   
+   );
 }
 
 export default App;
