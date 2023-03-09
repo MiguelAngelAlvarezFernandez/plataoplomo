@@ -14,8 +14,8 @@ useEffect(() =>
 
     return (
       <>
-      {Saldo>=0 && <span>Saldo: {Saldo.toFixed(2)+" € "}<img src={si} alt="PagoSi" width="33" height="50"/> </span>}
-      {Saldo<0 && <span>Saldo: {Saldo.toFixed(2)+" € "}<img src={non} alt="PagoNon" width="33" height="50"/> </span>}
+      {Saldo>=0 && <span>Saldo: {Saldo.toFixed(2)+" € "}<img src={si} alt="PagoSi" width="50" height="75"/> </span>}
+      {Saldo<0 && <span>Saldo: {Saldo.toFixed(2)+" € "}<img src={non} alt="PagoNon" width="50" height="75"/> </span>}
       </>
     );
   }
