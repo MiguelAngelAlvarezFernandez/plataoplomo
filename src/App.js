@@ -18,7 +18,7 @@ function App() {
   }
 
   useEffect(() => {
-    setPagoPersoa( Persoas===0 ? 0 : Math.round((Total/Persoas)*100)/100 )
+    setPagoPersoa( Persoas===0 ? 0 : Total/Persoas )
   }, [Total,Persoas]);
 
   useEffect(
@@ -38,11 +38,11 @@ function App() {
 
       <>
       <label for="total">Total a pagar: </label>
-      <input type="text" id='total' onInput={manexadorTotal}></input>
+      <input type="number" className="inputTotal" id='total' onInput={manexadorTotal}></input>
       <br></br>
       <label for="pax"> Nº de Persoas: </label>
       <input type="range" id="pax" name="pax" min="0" max="24" value={Persoas} onInput={manexadorPersoas}/><span>{Persoas}</span>
-      <div> Pago por persona: {PagoPersoa} € </div>
+      <div> Pago por persona: {PagoPersoa.toFixed(2)} € </div>
       <div className='clientes'>{DatosInvitados}</div>
       </>
   

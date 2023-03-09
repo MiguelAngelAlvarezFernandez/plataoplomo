@@ -2,9 +2,14 @@
   margin: 10px;
 }
 .todoenteiro{
+ 
   margin-top: 25px;
   margin-left: 15px;
   background-color: lightgreen;
-
+  border-radius: 4px;
   color: navy;
 }
+.InputAportado
+{width: 5em;}
+.Aportado
+{margin-top: 3px}

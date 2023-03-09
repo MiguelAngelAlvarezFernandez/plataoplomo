@@ -24,16 +24,16 @@ function Personas(props) {
         <label for="nombre">
         Nombre:
         </label>
-        <input type="text" id="nombre" onInput={manexadorNombre} value={Nombre} size="9"></input>
+        <input type="text" id="nombre" onInput={manexadorNombre} value={Nombre} size="8"></input>
       </div>
       <div>  
         <label for="aportado">
         Aportado:
         </label>
-        <input type="text" id="aportado" onInput={manexadorAportado} value={Aportado} size="2"></input>
+        <input type="number" className={styles.InputAportado} id="aportado" onInput={manexadorAportado} value={Aportado} ></input>
       </div>
 
-      <div>  
+      <div className={styles.Aportado} >  
         <Saldo Aportado={Aportado} Poner={props.Poner}></Saldo>
 
       </div>
