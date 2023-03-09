@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState, createContext } from 'react'
 import Personas from './Components/Personas/Personas.jsx'
+import { aXDecimales } from './lib';
 
 export const PagoContext = createContext()
 
@@ -20,7 +21,7 @@ function App() {
   }
 
   useEffect(() => {
-    setPagoPersoa(Persoas===0 ? 0 : Total/Persoas)
+    setPagoPersoa(Persoas===0 ? 0 : aXDecimales((Total/Persoas), 2))
   }, [Total,Persoas]);
 
   useEffect(
@@ -44,7 +45,7 @@ function App() {
       <br></br>
       <label for="pax"> Nº de Persoas: </label>
       <input type="range" id="pax" name="pax" min="0" max="24" value={Persoas} onInput={manexadorPersoas}/><span>{Persoas}</span>
-      <div> Pago por persona: {PagoPersoa.toFixed(2)} € </div>
+      <div> Pago por persona: {PagoPersoa} € </div>
       <div className='clientes'>{DatosInvitados}</div>
     </PagoContext.Provider>
   
