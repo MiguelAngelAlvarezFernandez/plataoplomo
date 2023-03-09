@@ -6,9 +6,10 @@
   flex-direction: column;
   align-items: center;
   margin: 10px;
-  background-color: lightgreen;
-  border-radius: 4px;
-  color: navy;
+  background-color: darkseagreen;
+  border-radius: 8px;
+  color: midnightblue;
+  opacity: 0.88;
 }
 .InputAportado
 {width: 5em;}
