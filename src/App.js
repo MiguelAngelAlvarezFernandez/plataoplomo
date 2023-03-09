@@ -20,7 +20,7 @@ function App() {
   }
 
   useEffect(() => {
-    setPagoPersoa( Persoas===0 ? 0 : Math.round((Total/Persoas)*100)/100 )
+    setPagoPersoa(Persoas===0 ? 0 : Total/Persoas)
   }, [Total,Persoas]);
 
   useEffect(
@@ -28,25 +28,25 @@ function App() {
       const DatosComensales=[]
       let Contador = 0
       while(Contador < Persoas)
-      {DatosComensales.push(<Personas /*Poner={PagoPersoa}*/ /*Xente={Persoas}*/ key={Contador}></Personas>)
+      {DatosComensales.push(<Personas key={Contador}></Personas>)
       Contador = Contador+1
       }
       setDatosInvitados(DatosComensales)
     },
-    [PagoPersoa, Persoas]
+    [PagoPersoa]
   )
 
    return (
 
-      <PagoContext.Provider value={PagoPersoa}>
+    <PagoContext.Provider value={PagoPersoa}>
       <label for="total">Total a pagar: </label>
       <input type="text" id='total' onInput={manexadorTotal}></input>
       <br></br>
       <label for="pax"> Nº de Persoas: </label>
       <input type="range" id="pax" name="pax" min="0" max="24" value={Persoas} onInput={manexadorPersoas}/><span>{Persoas}</span>
-      <div> Pago por persona: {PagoPersoa} € </div>
+      <div> Pago por persona: {PagoPersoa.toFixed(2)} € </div>
       <div className='clientes'>{DatosInvitados}</div>
-      </PagoContext.Provider>
+    </PagoContext.Provider>
   
     );
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Saldo from "../Saldo/Saldo"
 import styles from "./Personas.module.css"
 
-function Personas(props) {
+function Personas() {
 
   const [Nombre,setNombre] = useState("")
   const [Aportado,setAportado] = useState(0)
@@ -34,7 +34,7 @@ function Personas(props) {
       </div>
 
       <div>  
-        <Saldo Aportado={Aportado} /*Poner={props.Poner}*/></Saldo>
+        <Saldo Aportado={Aportado}></Saldo>
 
       </div>
       </div>

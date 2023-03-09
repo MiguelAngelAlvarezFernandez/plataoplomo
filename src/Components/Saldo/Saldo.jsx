@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
-import {PagoContext} from "../../App"
-import si from "../../imaxes/si.jpg"
-import non from "../../imaxes/non.jpg"
+import {PagoContext} from "../../App";
+import si from "../../imaxes/si.jpg";
+import non from "../../imaxes/non.jpg";
 
 function Saldo(props) {
 
@@ -11,9 +11,9 @@ const [Saldo, setSaldo] = useState(0)
 
 useEffect(() => 
   {
-  setSaldo(Math.round((props.Aportado-{PagoPersoa}/*props.Poner*/)*100)/100)
+  setSaldo(Math.round((props.Aportado-PagoPersoa)*100)/100)
   
-  },[props.Aportado, {PagoPersoa}/*props.Poner*/]);
+  },[props.Aportado, PagoPersoa]);
 
     return (
       <>
