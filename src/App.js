@@ -26,7 +26,7 @@ function App() {
       const DatosComensales=[]
       let Contador = 0
       while(Contador < Persoas)
-      {DatosComensales.push(<Personas Poner={PagoPersoa} Xente={Persoas} key={Contador}></Personas>)
+      {DatosComensales.push(<Personas Poner={PagoPersoa}  key={Contador}></Personas>)
       Contador = Contador+1
       }
       setDatosInvitados(DatosComensales)
@@ -35,7 +35,6 @@ function App() {
   )
 
    return (
-
       <>
       <label for="total">Total a pagar: </label>
       <input type="number" className="inputTotal" id='total' onInput={manexadorTotal}></input>
@@ -45,8 +44,7 @@ function App() {
       <div> Pago por persona: {PagoPersoa.toFixed(2)} € </div>
       <div className='clientes'>{DatosInvitados}</div>
       </>
-  
-    );
+      );
 }
 
 export default App;
