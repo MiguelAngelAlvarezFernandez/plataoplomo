@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     setPagoPersoa( Persoas===0 ? 0 : Total/Persoas )
-  }, [Total,Persoas]);
+  }, [Total, Persoas]);
 
   useEffect(
     ()=>{
@@ -31,7 +31,7 @@ function App() {
       }
       setDatosInvitados(DatosComensales)
     },
-    [PagoPersoa]
+    [PagoPersoa, Persoas]
   )
 
    return (
